@@ -115,31 +115,21 @@ let emailAddress = "1; 2; 3; 3; 4";
 
 if (emailAddress.indexOf(";")) {
   emailAddress = emailAddress
-    .split(";")
-    .reduce((acc, item) => {
-      if (acc.indexOf(item) === -1) {
-        acc.push(item);
-      }
-
-      return acc;
-    }, [])
-    .join(";");
+  .split(";")
+  .reduce((acc, item) => {
+    if (acc.indexOf(item) === -1) {
+      acc.push(item);
+    }
+    
+    return acc;
+  }, [])
+  .join(";");
 }
 
-// console.log("emailAddress: ", emailAddress);
 
+// *                                                          Метод replace(/; /g, ';') заменяет '; ' на ";"
+// *                                                          Метод set делает все элементы уникальными
 // ?    нужно избавиться от повторяющихся элементов в массиве
-const arrays = ["ade", "kemi", "bose", "esther", "felele", "ade"];
-
-const uniqueArray = arrays.filter(
-  (array, index) => arrays.indexOf(array) === index
-);
-// console.log("uniqueArray: ", uniqueArray);
-
-// * статья про удаление дубликатов массива     https://www.codementor.io/@sunnyedogbo/remove-array-duplicates-in-javascript-12yi1u1gdh
-
-const numbers = [1, 2, 3, 4, 5];
-const total = numbers.reduce((acc, num) => {
-  return acc + num;
-}, 0);
-console.log("🚀total: ", total);
+const email = '1; 2; 3; 4; 1; 2'.replace(/; /g, ';');
+const result = [...new Set(email.split(';'))].join('; ');
+console.log(result);
