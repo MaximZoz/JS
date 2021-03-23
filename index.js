@@ -133,3 +133,19 @@ if (emailAddress.indexOf(";")) {
 const email = '1; 2; 3; 4; 1; 2'.replace(/; /g, ';');
 const result = [...new Set(email.split(';'))].join('; ');
 console.log(result);
+
+
+
+// *                                                          Метод replace(/; /g, ';') заменяет '; ' на ";"
+// ?    нужно избавиться от последнего символа в строке, если он есть
+value = "1;2;3;4;5;";
+let emailAddress = value.replace(/; /g, ";");
+
+if (
+  emailAddress != null &&
+  emailAddress.length > 0 &&
+  emailAddress.charAt(emailAddress.length - 1) == ";"
+) {
+  emailAddress = emailAddress.substring(0, emailAddress.length - 1);
+}
+console.log(emailAddress);
