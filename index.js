@@ -145,7 +145,14 @@ if (
   emailAddress != null &&
   emailAddress.length > 0 &&
   emailAddress.charAt(emailAddress.length - 1) == ";"
-) {
-  emailAddress = emailAddress.substring(0, emailAddress.length - 1);
-}
-console.log(emailAddress);
+  ) {
+    emailAddress = emailAddress.substring(0, emailAddress.length - 1);
+  }
+  console.log(emailAddress);
+  
+  
+  // *                                                          Метод replace(/;$/, "") заменяет последний символ в строке, если он есть ';'  на "" 
+const value = '1; 23;'
+val = value.replace(/;$/, "");
+
+console.log(val);
